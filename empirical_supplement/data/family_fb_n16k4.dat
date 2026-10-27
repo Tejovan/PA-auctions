@@ -1,0 +1,5 @@
+x family tau0 cutoff affine relaxtau vcgpa ivcgpa ivcgaffine exante exanteivcg gammacut bound guarantee gammabound vcg
+0 independent 74.65 90.50 92.40 92.53 92.53 92.53 92.40 88.06 88.06 nan 92.53 83.11 69.01 61.81
+1 harmful-middle 45.76 89.31 91.23 89.70 92.26 92.38 91.32 86.04 86.29 nan 92.37 83.11 69.01 34.31
+2 heavy-tail 97.63 98.33 98.76 98.52 98.79 98.79 98.76 93.24 93.24 nan 98.79 83.11 69.01 97.55
+3 harm-rises 70.22 91.52 93.08 93.43 93.74 93.74 93.08 85.44 85.44 nan 93.75 83.11 69.01 68.58

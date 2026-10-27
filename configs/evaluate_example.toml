@@ -1,0 +1,38 @@
+# Evaluate given thresholds:  python run.py configs/evaluate_example.toml
+# The paper's benchmark thresholds and a linear one on two synthetic families; uncomment from_run to evaluate
+# every optimum of an earlier run (same distribution label, ζ, n, k) again.
+
+kind = "evaluate"
+name = "given-thresholds"
+description = "Benchmarks of the paper (zero-welfare threshold, ex ante welfare cutoff) and τ(e) = 0.3 − e."
+
+[[distributions]]
+source = "harm_rises"
+
+[[distributions]]
+source = "harmful_middle"
+
+[markets]
+num_bidders = [8]
+num_goods = [1, 2]
+
+[[thresholds]]
+label = "zero-welfare"           # zero-welfare threshold τ⁰: welfare cutoff 0
+cutoff = 0.0
+
+[[thresholds]]
+label = "ex-ante"                # ex ante welfare cutoff τ^EA (paper Corollary 6.5(3)), checked
+cutoff = "ex_ante"               # against the guarantee max{ρ_{n,k}, 1 − 1/e}
+
+[[thresholds]]
+label = "linear"
+polynomial = [0.3, -1.0]
+
+# [[thresholds]]
+# from_run = "runs/2026-10-19_1400_optimize_standard-test"
+
+[evaluation]
+num_simulated_auctions = 5000
+
+[checks]
+grid_refinement = true

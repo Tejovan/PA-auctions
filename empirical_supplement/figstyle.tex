@@ -1,0 +1,50 @@
+% Shared figure style of the paper and its supplements.
+% Colors match PA_auctions/figures.py
+% (contrast >= 3:1 on white; CIEDE2000 >= 8.5 under simulated color-vision deficiency).
+% Line widths: data lines >= 1pt, dashed or dotted colored lines 1.2pt, reference lines 0.6pt.
+\definecolor{ink}{HTML}{0B0B0B}
+\definecolor{inksec}{HTML}{52514E}
+\definecolor{vcg}{HTML}{7A7974}
+\definecolor{vcgpa}{HTML}{2A78D6}
+\definecolor{ivcgpa}{HTML}{C0392B}
+\definecolor{firstbest}{HTML}{19A170}
+\definecolor{seriesA}{HTML}{BB7A03}
+\definecolor{seriesB}{HTML}{5E3C99}
+\definecolor{seriesC}{HTML}{BE538E}
+\definecolor{seriesD}{HTML}{3B3B3B}
+% Sequential colors for one ordered parameter (e.g. n = 2, 4, 8, 16): viridis at 0.1, 0.37, 0.63, 0.9.
+\definecolor{seqA}{HTML}{482475}
+\definecolor{seqB}{HTML}{2D708E}
+\definecolor{seqC}{HTML}{2AB07F}
+\definecolor{seqD}{HTML}{BDDF26}
+% Five sequential levels (e.g. n/k = 2, 4, 8, 16, 32): viridis at 0.1, 0.3, 0.5, 0.7, 0.9.
+\definecolor{fiveA}{HTML}{482475}
+\definecolor{fiveB}{HTML}{355F8D}
+\definecolor{fiveC}{HTML}{21918C}
+\definecolor{fiveD}{HTML}{44BF70}
+\definecolor{fiveE}{HTML}{BDDF26}
+% Seven sequential levels (n/k = 8/7, 4/3, 2, 4, 8, 16, 32): viridis at 0.1, 0.233, ..., 0.9.
+\definecolor{sevenA}{HTML}{482475}
+\definecolor{sevenB}{HTML}{3D4D8A}
+\definecolor{sevenC}{HTML}{2D708E}
+\definecolor{sevenD}{HTML}{21918C}
+\definecolor{sevenE}{HTML}{2AB07F}
+\definecolor{sevenF}{HTML}{67CC5C}
+\definecolor{sevenG}{HTML}{BDDF26}
+\colorlet{regionin}{seriesA!12}
+\colorlet{regionout}{black!10}
+\colorlet{regionqty}{seriesB!18}
+\colorlet{regionpay}{seriesC!15}
+\pgfplotsset{
+  every axis/.append style={unbounded coords=jump,tick label style={font=\footnotesize},label style={font=\small},
+    title style={font=\small},legend style={font=\footnotesize,draw=black!30,fill=white,
+    fill opacity=0.9,text opacity=1},legend cell align=left},
+  main curve/.style={ink,line width=1.4pt},
+  series A/.style={seriesA,line width=1.2pt,dashed},
+  series B/.style={seriesB,line width=1.2pt,densely dotted},
+  series C/.style={seriesC,line width=1.2pt,dashdotted},
+  series D/.style={seriesD,line width=1.2pt,loosely dashed},
+  ref line/.style={inksec,line width=0.6pt,densely dashed},
+  optimum mark/.style={only marks,mark=*,mark size=2pt},
+  alternative mark/.style={only marks,mark=o,mark size=2.2pt,thick},
+}
